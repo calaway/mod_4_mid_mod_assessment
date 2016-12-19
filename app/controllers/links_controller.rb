@@ -3,7 +3,7 @@ class LinksController < ApplicationController
 
   def index
     @link = Link.new
-    @links = current_user.links
+    @links = current_user.links.reload
   end
 
   def create
@@ -20,7 +20,12 @@ class LinksController < ApplicationController
   end
 
   def update
-
+    link = Link.find(params[:id])
+    if link.update(link_params)
+      redirect_to links_path
+    else
+      render :edit
+    end
   end
 
   private
