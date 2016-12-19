@@ -10,7 +10,8 @@
   <ul>
     <li>
       Title: <%= link.title %><br />
-      URL: <%= link.url %>
+      URL: <%= link.url %><br />
+      <%= link_to "Edit", edit_link_path(link) %>
     </li>
   </ul>
 <% end %>
