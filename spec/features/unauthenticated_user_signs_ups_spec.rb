@@ -5,9 +5,13 @@ RSpec.feature "Unauthenticated User Signs Ups", type: :feature do
     visit new_user_path
 
     expect(page).to have_content("Sign Up")
-save_and_open_page
-    fill_in "email address", with: "c@calaway.cc"
-    fill_in "password", with: "password"
-    fill_in "password confirmation", with: "password"
+
+    fill_in "user[email]", with: "c@calaway.cc"
+    fill_in "user[password]", with: "password"
+    fill_in "user[password_confirmation]", with: "password"
+    new_user = User.last
+
+    expect(current_path).to eq root_path
+    expect(new_user.email).to eq "c@calaway.cc"
   end
 end
