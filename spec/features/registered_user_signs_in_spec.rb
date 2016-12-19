@@ -10,8 +10,8 @@ RSpec.feature "Registered user signs in", type: :feature do
 
     expect(page).to have_content("Sign In")
 
-    fill_in "session[email]", with: "c@calaway.cc"
-    fill_in "session[password]", with: "password"
+    fill_in "email", with: "c@calaway.cc"
+    fill_in "password", with: "password"
     click_button "Sign In"
 
     expect(current_path).to eq root_path
