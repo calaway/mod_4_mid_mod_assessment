@@ -5,6 +5,7 @@ RSpec.feature "Authenticated user submits link", type: :feature do
     user = User.create(email: "c@calaway.cc",
                        password: "password",
                        password_confirmation: "password")
+    login(user)
 
     visit links_path
 

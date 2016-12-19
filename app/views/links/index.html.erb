@@ -1,0 +1,16 @@
+<h3>Submit New Link</h3>
+<%= form_for @link do |f| %>
+  Title: <%= f.text_field :title %><br />
+  URL: <%= f.text_field :url %><br />
+  <%= f.submit "Submit" %>
+<% end %>
+
+<h3>Your Links</h3>
+<% @links.each do |link| %>
+  <ul>
+    <li>
+      Title: <%= link.title %><br />
+      URL: <%= link.url %>
+    </li>
+  </ul>
+<% end %>
