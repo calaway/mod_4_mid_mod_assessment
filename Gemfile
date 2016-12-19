@@ -22,7 +22,6 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'web-console', '~> 2.0'
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
@@ -32,4 +31,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
 end
