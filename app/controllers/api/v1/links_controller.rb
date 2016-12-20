@@ -1,7 +1,8 @@
 class Api::V1::LinksController < ApplicationController
+  before_action :authorize!
 
   def create
-    @link = Link.new(link_params)
+    @link = current_user.links.new(link_params)
     if @link.save
       render json: @link, status: 201
     else
