@@ -20,11 +20,11 @@
         <button class="upgrade-quality">+</button>
         <button class="downgrade-quality">-</button>
         <button class='delete-link'>Delete</button>
+        <%= button_to "Edit", edit_link_path(link), method: :get %>
       </p>
     </div>
 
       <!-- <p>Title: <%= link.title %><br /></p>
-      <p>URL: <%= link.url %><br /></p>
-      <p><%= link_to "Edit", edit_link_path(link) %></p> -->
+      <p>URL: <%= link.url %><br /></p> -->
   <% end %>
 </div>

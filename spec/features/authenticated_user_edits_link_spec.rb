@@ -21,6 +21,5 @@ RSpec.feature "Authenticated user submits link", type: :feature do
     expect(current_path).to eq links_path
     expect(page).to have_content "The Changed Idea"
     expect(page).to have_content "www.example.com/2"
-    save_and_open_page
   end
 end
